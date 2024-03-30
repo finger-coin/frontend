@@ -1,0 +1,34 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    justify-content: center;
+    padding-top: 20%;
+}
+
+.inviteText {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.socialIcon {
+    width: 36px;
+    height: 36px;
+}
+
+.copyLinkButton {
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    color: white;
+}

@@ -10,7 +10,7 @@ export const Header = () => {
         <div className={styles.root}>
             <div className={styles.logoContainer}>
                 <Icon name="logo"/>
-                <div className={styles.title}>Clap Coin</div>
+                <div className={styles.title}>Finger Coin</div>
             </div>
             <button className={styles.connectButton} onClick={() => open()} type="button">
                 Wallet

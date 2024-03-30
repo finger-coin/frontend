@@ -1,0 +1,33 @@
+.root {
+    height: 74px;
+    background-color: #3c3c46;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.buttonIcon {
+
+}
+
+.buttonName {
+    color: white;
+    font-size: 8px;
+}
