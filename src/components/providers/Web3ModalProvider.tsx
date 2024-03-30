@@ -27,10 +27,7 @@ const config = defaultWagmiConfig({
 createWeb3Modal({
     wagmiConfig: config,
     projectId,
-    allWallets: 'HIDE',
-    excludeWalletIds: [
-        'fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa',
-    ],
+    // allWallets: 'HIDE',
     customWallets: [
         {
             id: '855481a23310c2bccf2a6134367449d61bd2f1c8793f929516c4f68a6aaace7a',

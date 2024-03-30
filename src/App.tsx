@@ -7,7 +7,7 @@ import Overlay from '@components/Overlay/Overlay';
 
 import styles from './App.module.scss';
 import {Header} from "@components/Header/Header";
-import {useAccount, useWalletClient, useWriteContract} from "wagmi";
+import {useAccount, useWriteContract} from "wagmi";
 import {abi} from "./abi";
 
 function App() {
