@@ -21,10 +21,14 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    opacity: 0.3;
+
+    &.isActive {
+        opacity: 1;
+    }
 }
 
 .buttonIcon {
-
 }
 
 .buttonName {

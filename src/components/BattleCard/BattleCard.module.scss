@@ -1,0 +1,23 @@
+.root {
+    background-color: #4e4e55;
+    padding: 20px 12px 12px;
+    border-radius: 8px;
+    border: 1px solid white;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 1px 13px 39px -11px rgba(0, 0, 0, 0.71);
+    -webkit-box-shadow: 1px 13px 39px -11px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 1px 13px 39px -11px rgba(0, 0, 0, 0.71);
+}
+
+.title {
+    color: white;
+    font-size: 12px;
+}
+
+.image {
+    border-radius: 4px;
+    border: 1px solid #c0c0c0;
+}

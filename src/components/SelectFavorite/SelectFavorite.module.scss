@@ -1,0 +1,59 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pickContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.themeImg {
+    padding-bottom: 16px;
+}
+
+.image {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    margin: 0;
+
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+    &:active {
+        transform: scale(0.95);
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+    &.isActive {
+        -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%);
+    }
+}
+
+.names {
+    display: flex;
+    gap: 32px;
+}
+
+.vs {
+    color: #a4a4a4;
+}
+
+.startButton {
+    margin-top: 64px;
+    background-color: #543dff;
+    width: 100%;
+    height: 60px;
+}
+
+.exitButton {
+    margin-top: 16px;
+    border: 1px solid #543dff;
+    width: 100%;
+    height: 60px;
+}
