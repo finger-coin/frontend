@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 32px;
+    height: 100vh;
+}
+
+.coinsCount {
+    color: #fcd116;
+    font-size: 64px;
+}
