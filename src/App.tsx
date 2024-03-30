@@ -11,7 +11,7 @@ import {useAccount, useWriteContract} from "wagmi";
 import {abi} from "./abi";
 
 function App() {
-    const { data: hash, writeContract } = useWriteContract()
+    const { data: hash, writeContractAsync } = useWriteContract()
     const [coinsCount, setCoinsCount] = useState<number>(0);
     const {address} = useAccount();
     const [labels, setLabels] = useState<{ x: number; y: number }[]>([]);
@@ -30,8 +30,10 @@ function App() {
         setCoinsCount((prev) => prev + 1);
     };
 
-    const handleWriteContract = () => {
-        writeContract({
+    const [error, setError] = useState('')
+
+    const handleWriteContract = async () => {
+        await writeContractAsync({
             address: '0xFE3D58c42B01f5AeeCDfe184C533efD8A16B7C06',
             abi,
             functionName: 'mint',
@@ -39,7 +41,7 @@ function App() {
                 address,
                 BigInt(10*(10**18))
             ],
-        })
+        }).catch((e) => setError(e.toString()))
     }
 
 
@@ -51,6 +53,7 @@ function App() {
             <Coin onClick={handleCoinClick} />
             <button type="button" onClick={handleWriteContract}>write contract</button>
             {hash && <div className={styles.hash}>Transaction Hash: {hash}</div>}
+            {error}
         </div>
     );
 }
