@@ -3,11 +3,11 @@
     "version": "2.0.1",
     "private": true,
     "volta": {
-        "node": "16.13.2",
+        "node": "20.0.0",
         "yarn": "1.22.15"
     },
     "engines": {
-        "node": "16.13.2",
+        "node": "20.0.0",
         "yarn": "1.22.15"
     },
     "scripts": {
