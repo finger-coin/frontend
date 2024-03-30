@@ -1,16 +1,19 @@
 // App.tsx
 import React, { useState } from 'react';
 
-import { useWeb3Modal } from '@web3modal/wagmi/react';
 
 import { Coin } from '@components/Coin/Coin';
 import Overlay from '@components/Overlay/Overlay';
 
 import styles from './App.module.scss';
+import {Header} from "@components/Header/Header";
+import {useAccount, useWalletClient, useWriteContract} from "wagmi";
+import {abi} from "./abi";
 
 function App() {
-    const { open } = useWeb3Modal();
+    const { data: hash, writeContract } = useWriteContract()
     const [coinsCount, setCoinsCount] = useState<number>(0);
+    const {address} = useAccount();
     const [labels, setLabels] = useState<{ x: number; y: number }[]>([]);
 
     const handleAddLabel = () => {
@@ -27,14 +30,27 @@ function App() {
         setCoinsCount((prev) => prev + 1);
     };
 
+    const handleWriteContract = () => {
+        writeContract({
+            address: '0xFE3D58c42B01f5AeeCDfe184C533efD8A16B7C06',
+            abi,
+            functionName: 'mint',
+            args: [
+                address,
+                BigInt(10*(10**18))
+            ],
+        })
+    }
+
+
     return (
         <div className={styles.root}>
-            <button onClick={() => open()} type="button">
-                connect
-            </button>
             <Overlay labels={labels} />
+            <Header />
             <h1 className={styles.coinsCount}>{coinsCount}</h1>
             <Coin onClick={handleCoinClick} />
+            <button type="button" onClick={handleWriteContract}>write contract</button>
+            {hash && <div className={styles.hash}>Transaction Hash: {hash}</div>}
         </div>
     );
 }

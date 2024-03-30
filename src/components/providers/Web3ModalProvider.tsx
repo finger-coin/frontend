@@ -27,6 +27,17 @@ const config = defaultWagmiConfig({
 createWeb3Modal({
     wagmiConfig: config,
     projectId,
+    allWallets: 'HIDE',
+    excludeWalletIds: [
+        'fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa',
+    ],
+    customWallets: [
+        {
+            id: '855481a23310c2bccf2a6134367449d61bd2f1c8793f929516c4f68a6aaace7a',
+            name: 'NEOPIN',
+            image_url: 'https://explorer-api.walletconnect.com/v3/logo/lg/424c54b5-b786-4c14-871f-61d5c5ded800?projectId=2f05ae7f1116030fde2d36508f472bfb'
+        }
+    ]
 });
 
 export const Web3ModalProvider: FC<{ children: ReactNode }> = ({ children }) => (
