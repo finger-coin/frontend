@@ -9,7 +9,7 @@ module.exports = defineConfig({
         'prettier/@typescript-eslint',
         'prettier/react',
     ],
-    plugins: ['react', '@typescript-eslint', 'prettier', 'unused-imports'],
+    plugins: ['react', '@typescript-eslint', 'prettier'],
     env: {
         browser: true,
         es6: true,
@@ -76,16 +76,6 @@ module.exports = defineConfig({
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'import/order': 'off',
-        'unused-imports/no-unused-imports': 'error',
-        'unused-imports/no-unused-vars': [
-            'warn',
-            {
-                vars: 'all',
-                varsIgnorePattern: '^_',
-                args: 'after-used',
-                argsIgnorePattern: '^_',
-            },
-        ],
         // Override airbnb config to allow for/of
         'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     },

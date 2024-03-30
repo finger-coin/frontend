@@ -6,3 +6,8 @@ declare module '*.svg' {
     const src: string;
     export default src;
 }
+
+declare module 'react-dom/client' {
+    const client: any; // You might need to adjust the type here
+    export default client;
+}
