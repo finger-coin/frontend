@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
             'process.env.SOME_KEY': JSON.stringify(env.SOME_KEY),
         },
         build: {
-            outDir: 'build',
+            outDir: 'dist',
         },
         css: {
             modules: {
