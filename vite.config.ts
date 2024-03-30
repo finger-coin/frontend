@@ -8,7 +8,8 @@ export default defineConfig(({ mode }) => {
     return {
         base: `/`,
         define: {
-            'process.env.SOME_KEY': JSON.stringify(env.SOME_KEY),
+            "process.env": process.env,
+            ENV_KEY: process.env.ENV_KEY,
         },
         build: {
             outDir: 'dist',
