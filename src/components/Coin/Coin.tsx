@@ -9,7 +9,7 @@ import { ReactComponent as CoinIcon } from '@assets/icons/coin.svg';
 const AnimatedCoinIcon = animated(CoinIcon);
 
 type CoinProps = {
-    onClick?: () => void;
+    onClick: () => void;
 };
 
 export const Coin: FC<CoinProps> = ({ onClick }) => {
