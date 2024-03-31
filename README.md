@@ -27,7 +27,7 @@ Scalable Backend: Built to support a growing community with real-time updates.
 🛠 Installation and Setup
 
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/bom-team/frontend.git
 
 # Navigate to the project directory
 cd finger-coin
