@@ -4,6 +4,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    &.isPurple {
+        background-color: #5f46ff;
+    }
 }
 
 .logoContainer {

@@ -17,15 +17,15 @@ export const battles: Battle[] = [
     {
         id: 1,
         left: {
-            name: 'First',
+            name: 'Messi',
             imageUrl: '/woody.png'
         },
         right: {
-            name: 'Second',
+            name: 'Ronaldo',
             imageUrl: '/buzz.png'
         },
         themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card2.png',
+        imageUrl: '/battle-card4.png',
     },
     {
         id: 2,
@@ -43,14 +43,15 @@ export const battles: Battle[] = [
     {
         id: 3,
         left: {
-            name: 'Messi',
+            name: 'BTS',
             imageUrl: '/woody.png'
         },
         right: {
-            name: 'Ronaldo',
+            name: 'Seventeen',
             imageUrl: '/buzz.png'
         },
         themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card4.png',
+        imageUrl: '/battle-card2.png',
     },
+
 ]

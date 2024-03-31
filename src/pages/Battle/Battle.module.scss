@@ -1,3 +1,6 @@
+.root {
+}
+
 .timerContainer {
     padding-top: 32px;
     text-align: center;
@@ -13,6 +16,45 @@
 }
 
 .coins {
+    padding-top: 16px;
     font-size: 18px;
     opacity: 1;
 }
+
+.overlay {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.5s;
+}
+
+.plusOne {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    opacity: 0;
+    animation: fadeInOut 0.5s ease forwards;
+}
+
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

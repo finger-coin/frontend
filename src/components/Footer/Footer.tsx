@@ -22,20 +22,20 @@ const buttons: { icon: IconKind; name: string, href: string }[] = [
     },
     {
         icon: 'userCirclePlus',
-        name: 'Invite',
-        href: '/invite'
+        name: 'Profile',
+        href: '/profile'
     },
 ];
 
 type FooterProps = {
-    isBlue?: boolean;
+    isGame?: boolean;
 }
 
 export const Footer:FC<FooterProps> = (props) => {
-    const {isBlue} = props
+    const {isGame} = props
     const location = useLocation();
     return (
-        <div className={styles.root}>
+        <div className={clsx(styles.root, isGame && styles.isPurple)}>
             {buttons.map((button) => (
                 <a href={button.href} key={button.href} className={clsx(styles.buttonContainer, location.pathname.split('/')[1] === button.href.split('/')[1] && styles.isActive)}>
                     <Icon name={button.icon} className={styles.buttonIcon} />

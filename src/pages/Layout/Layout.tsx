@@ -3,19 +3,20 @@ import {Header} from "@components/Header/Header";
 import {Footer} from "@components/Footer/Footer";
 import styles from './Layout.module.scss';
 import {useLocation, useParams} from "react-router-dom";
+import clsx from "clsx";
 
 
 const Layout: FC = ({ children }) => {
     const location = useLocation();
 
-    console.log(location)
+    console.log(location.pathname)
     return (
-        <div className={styles.root}>
-            <Header />
-            <div className={styles.main}>
+        <div className={clsx(styles.root, location.pathname === '/battle/0/click' && styles.isPurple)}>
+            <Header isGame={location.pathname === '/battle/0/click'} />
+            <div className={clsx(styles.main, location.pathname === '/battle/0/click' && styles.isPurple)}>
             {children}
             </div>
-            <Footer isBlue={location.pathname.split('/')[1] === 'battle'} />
+            <Footer isGame={location.pathname === '/battle/0/click'}/>
         </div>
     );
 };

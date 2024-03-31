@@ -10,6 +10,7 @@ const BattlePage = () => {
 
     const [clicksCount, setClicksCount] = useState(0);
     const [progress, setProgress] = useState(50);
+    const [showText, setShowText] = useState(false);
 
     if (battleId === undefined) return null;
 
@@ -26,7 +27,7 @@ const BattlePage = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setTime(prevTime => prevTime - 1);
-            setProgress(prevProgress => prevProgress - 1); // Уменьшаем прогресс на 1% каждую секунду
+            setProgress(prevProgress => prevProgress - 1);
         }, 1000);
 
         return () => {
@@ -49,6 +50,11 @@ const BattlePage = () => {
     const handleClick = () => {
         setClicksCount(prevClicks => prevClicks + 1);
         setProgress(prevProgress => prevProgress + 1);
+        setShowText(true);
+
+        setTimeout(() => {
+            setShowText(false);
+        }, 300);
     };
 
     return (
@@ -59,7 +65,8 @@ const BattlePage = () => {
                 <span className={styles.coins}>{clicksCount}</span>
             </div>
 
-            <Coin onClick={handleClick} />
+
+            <Coin onClick={handleClick}/>
         </div>
     );
 };

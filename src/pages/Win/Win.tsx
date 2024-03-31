@@ -5,7 +5,7 @@ const WinPage = () => {
     return (
         <div className={styles.root}>
             <h1>YOU WON!</h1>
-            <h2>+6,000</h2>
+            <h2>+10,000</h2>
             <img src="/win.png"/>
         </div>
     );

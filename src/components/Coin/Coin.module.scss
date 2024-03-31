@@ -1,14 +1,21 @@
 .root {
     border-radius: 50%;
-    padding: 64px 16px 16px;
+    padding: 16px 16px 16px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 48px;
 }
 
 .coinIcon {
     border-radius: 50%;
-    width: 256px;
-    height: 256px;
+    width: 100%;
+}
+
+
+.videoContainer {
+    z-index: 999;
+    width: 50%;
 }

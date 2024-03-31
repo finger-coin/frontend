@@ -4,8 +4,17 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+
+    &.isPurple {
+        background-color: #5f46ff;
+
+    }
 }
 
 .main {
     padding: 0 16px;
+
+    &.isPurple {
+        background-color: #5f46ff;
+    }
 }

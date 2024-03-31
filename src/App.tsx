@@ -24,7 +24,7 @@ const App: React.FC = () => {
                     {/* won page*/}
                     {/* rating page*/}
                     {/* shop page*/}
-                    <Route path="invite" element={<Invite />} />
+                    <Route path="profile" element={<Invite />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

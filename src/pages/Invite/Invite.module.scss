@@ -4,7 +4,15 @@
     align-items: center;
     gap: 32px;
     justify-content: center;
-    padding-top: 20%;
+    padding-top: 10%;
+}
+
+.mintButton {
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 12px;
+    background-color: #3d5cff;
+    margin-bottom: 32px;
 }
 
 .inviteText {
