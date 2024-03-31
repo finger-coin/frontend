@@ -1,4 +1,5 @@
 .root {
+    position: relative;
 }
 
 .timerContainer {
@@ -57,4 +58,52 @@
         opacity: 0;
     }
 }
+
+
+.reactionsContainer {
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    height: 300px;
+    width: 100px;
+}
+
+.reaction {
+    width: 64px;
+    height: 64px;
+    position: relative;
+}
+
+.animation {
+    animation: reactionAnimation 1s forwards;
+}
+
+@keyframes reactionAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(-25px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-75px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
 

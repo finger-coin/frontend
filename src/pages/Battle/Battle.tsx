@@ -11,6 +11,7 @@ const BattlePage = () => {
     const [clicksCount, setClicksCount] = useState(0);
     const [progress, setProgress] = useState(50);
     const [showText, setShowText] = useState(false);
+    const [reactions, setReactions] = useState<any[]>([]);
 
     if (battleId === undefined) return null;
 
@@ -20,7 +21,7 @@ const BattlePage = () => {
         return <div>Battle not found</div>;
     }
 
-    const [time, setTime] = useState(15);
+    const [time, setTime] = useState(15); // Установка времени 15 секунд
 
     const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const BattlePage = () => {
         const timer = setInterval(() => {
             setTime(prevTime => prevTime - 1);
             setProgress(prevProgress => prevProgress - 1);
-        }, 1000);
+        }, 1000); // Установка интервала на 1000 миллисекунд (1 секунда)
 
         return () => {
             clearInterval(timer);
@@ -52,6 +53,14 @@ const BattlePage = () => {
         setProgress(prevProgress => prevProgress + 1);
         setShowText(true);
 
+        setReactions(prevReactions => [
+            ...prevReactions,
+            {
+                id: Date.now(),
+                animation: true
+            }
+        ]);
+
         setTimeout(() => {
             setShowText(false);
         }, 300);
@@ -65,8 +74,21 @@ const BattlePage = () => {
                 <span className={styles.coins}>{clicksCount}</span>
             </div>
 
-
             <Coin onClick={handleClick}/>
+            <div className={styles.reactionsContainer}>
+                {reactions.map(reaction => (
+                    <img
+                        key={reaction.id}
+                        className={`${styles.reaction} ${reaction.animation ? styles.animation : ''}`}
+                        src="/like.png"
+                        onAnimationEnd={() => {
+                            setReactions(prevReactions =>
+                                prevReactions.filter(item => item.id !== reaction.id)
+                            );
+                        }}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
