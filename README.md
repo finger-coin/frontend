@@ -27,8 +27,7 @@ Scalable Backend: Built to support a growing community with real-time updates.
 🛠 Installation and Setup
 
 # Demo link
-bom-frontend-t3y9nnyln-llamiib0ts-projects.vercel.app
-
+[[Demo]([bom-frontend-t3y9nnyln-llamiib0ts-projects.vercel.app](https://bom-frontend-t3y9nnyln-llamiib0ts-projects.vercel.app/))](https://bom-frontend-t3y9nnyln-llamiib0ts-projects.vercel.app/)
 # Clone the repository
 git clone https://github.com/bom-team/frontend.git
 
