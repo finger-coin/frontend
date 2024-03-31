@@ -5,6 +5,7 @@ Welcome to Finger Coin, where we transform your passion for fandoms into a dynam
 1. Gamify Fandom with Tap!
 Unleash your potential with a simple tap. Participate in thrilling A or B Showdowns, compete in challenges, and vote on your favorite memes or themes—all with a single tap.
 
+
 Simple Mechanics: Just tap to participate, compete, and earn.
 Daily & Weekly Showdowns: Choose between two fandom-related options in our A or B showdowns. Your choices shape the community narrative.
 
