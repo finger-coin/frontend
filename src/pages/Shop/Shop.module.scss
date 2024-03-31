@@ -1,0 +1,31 @@
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+}
+
+.itemCard {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.right {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buyButton,
+.donationButton {
+    width: 50%;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    font-size: 12px;
+    padding: 8px;
+}

@@ -7,6 +7,7 @@ import { ReactComponent as ShoppingCart } from '@assets/icons/ShoppingCart.svg';
 import { ReactComponent as UserCirclePlus } from '@assets/icons/UserCirclePlus.svg';
 import { ReactComponent as FacebookIcons } from '@assets/icons/fb.svg';
 import { ReactComponent as TwitterIcon } from '@assets/icons/twitter.svg';
+import { ReactComponent as CrownIcon } from '@assets/icons/crown.svg';
 
 export const icons = {
     twitter: TwitterIcon,
@@ -16,6 +17,7 @@ export const icons = {
     rocket: Rocket,
     shoppingCart: ShoppingCart,
     userCirclePlus: UserCirclePlus,
+    crown: CrownIcon,
 };
 
 export type IconKind = keyof typeof icons;

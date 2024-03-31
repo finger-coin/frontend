@@ -4,12 +4,10 @@ import { animated, useSpring } from '@react-spring/web';
 
 import styles from './Coin.module.scss';
 
-import { ReactComponent as CoinIcon } from '@assets/icons/coin.svg';
-
-const AnimatedCoinIcon = animated(CoinIcon);
+const woodyImage = '/woody.png'; // Путь к изображению woody.png
 
 type CoinProps = {
-    onClick: () => void;
+    onClick?: () => void;
 };
 
 export const Coin: FC<CoinProps> = ({ onClick }) => {
@@ -22,7 +20,7 @@ export const Coin: FC<CoinProps> = ({ onClick }) => {
     };
 
     const animatedProps = useSpring({
-        transform: clicked ? 'scale(1.05)' : 'scale(1)',
+        transform: clicked ? 'scale(1.03)' : 'scale(1)',
         config: { tension: 1000, friction: 15 },
     });
 
@@ -32,8 +30,8 @@ export const Coin: FC<CoinProps> = ({ onClick }) => {
     });
 
     return (
-        <animated.div className={styles.root} style={backgroundProps} onClick={handleClick}>
-            <AnimatedCoinIcon className={styles.coinIcon} style={animatedProps} />
+        <animated.div className={styles.root} onClick={handleClick}>
+            <animated.img src={woodyImage} alt="Woody" className={styles.coinIcon} style={animatedProps} />
         </animated.div>
     );
 };

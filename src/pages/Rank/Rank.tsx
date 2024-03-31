@@ -1,25 +1,25 @@
 import React from 'react';
-import styles from './Shop.module.scss';
+import styles from './Rank.module.scss';
 import * as ScrollArea from "@radix-ui/react-scroll-area";
-import {shopItems} from "../../mock/shop-items";
+import {BattleCard} from "@components/BattleCard/BattleCard";
+import {ranks} from "../../mock/ranks";
 
-const ShopPage = () => {
+const RankPage = () => {
     return (
         <div className={styles.root}>
 
-            <div className={styles.topContainer}>
-                <button className={styles.buyButton} >Buy</button>
-                <button className={styles.donationButton} >Donation</button>
+            <div className={styles.avatarContainer}>
+                <img className={styles.img} src="/avatar.png" />
+                <span className={styles.number}>No. 6</span>
             </div>
             <ScrollArea.Root className={styles.root}>
                 <ScrollArea.Viewport className={styles.viewPort}>
-                    {shopItems.map((item, index) => (
-                        <div key={item.imgUrl} className={styles.itemCard}>
-                            <img src={item.imgUrl} />
-                            <div className={styles.right}>
-                                <span>{item.name}</span>
-                                <span>{item.price}</span>
-                            </div>
+                    {ranks.map((rank, index) => (
+                        <div key={rank.url} className={styles.rankCard}>
+                            <span>{index+1}</span>
+                            <img src={rank.url} />
+                            <span>{rank.name}</span>
+                            <span>{rank.coins}</span>
                         </div>
                     ))}
                 </ScrollArea.Viewport>
@@ -36,4 +36,4 @@ const ShopPage = () => {
     );
 };
 
-export default ShopPage;
+export default RankPage;

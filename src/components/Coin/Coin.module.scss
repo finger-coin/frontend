@@ -1,14 +1,14 @@
 .root {
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    padding: 64px 16px 16px;
 
-    background: rgba(255, 209, 59, 0.41);
-    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .coinIcon {
+    border-radius: 50%;
     width: 256px;
     height: 256px;
 }

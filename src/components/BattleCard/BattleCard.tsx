@@ -8,7 +8,7 @@ export type BattleCardProps = Omit<Battle, 'themeUrl'>;
 export const BattleCard: FC<BattleCardProps> = (props) => {
     const { left, right, imageUrl, id } = props;
     return (
-        <Link className={styles.root} to={`/choose-favorite/${id}`}>
+        <Link className={styles.root} to={`/battle/${id}/choose`}>
             <span className={styles.title}>
                 {left.name}&nbsp;vs&nbsp;{right.name}
             </span>

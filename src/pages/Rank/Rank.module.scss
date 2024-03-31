@@ -1,0 +1,33 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.rankCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.31);
+    padding: 16px 0;
+}
+
+.avatarContainer {
+    text-align: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.img {
+    width: 90px;
+    height: 90px;
+}
+
+.number {
+    font-size: 12px;
+}

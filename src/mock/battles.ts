@@ -17,81 +17,40 @@ export const battles: Battle[] = [
     {
         id: 1,
         left: {
-            name: 'Woody',
+            name: 'First',
             imageUrl: '/woody.png'
         },
         right: {
-            name: 'Buzz',
+            name: 'Second',
             imageUrl: '/buzz.png'
         },
         themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
+        imageUrl: '/battle-card2.png',
     },
     {
         id: 2,
         left: {
-            name: 'Woody',
+            name: 'BlackPing',
             imageUrl: '/woody.png'
         },
         right: {
-            name: 'Buzz',
+            name: 'IZOne',
             imageUrl: '/buzz.png'
         },
         themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
+        imageUrl: '/battle-card3.png',
     },
     {
         id: 3,
         left: {
-            name: 'Woody',
+            name: 'Messi',
             imageUrl: '/woody.png'
         },
         right: {
-            name: 'Buzz',
+            name: 'Ronaldo',
             imageUrl: '/buzz.png'
         },
         themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
+        imageUrl: '/battle-card4.png',
     },
-    {
-        id: 4,
-        left: {
-            name: 'Woody',
-            imageUrl: '/woody.png'
-        },
-        right: {
-            name: 'Buzz',
-            imageUrl: '/buzz.png'
-        },
-        themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
-    },
-    {
-        id: 5,
-        left: {
-            name: 'Woody',
-            imageUrl: '/woody.png'
-        },
-        right: {
-            name: 'Buzz',
-            imageUrl: '/buzz.png'
-        },
-        themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
-    },
-    {
-        id: 6,
-        left: {
-            name: 'Woody',
-            imageUrl: '/woody.png'
-        },
-        right: {
-            name: 'Buzz',
-            imageUrl: '/buzz.png'
-        },
-        themeUrl: '/toy-story.png',
-        imageUrl: '/battle-card1.png',
-    },
-
-
 ]

@@ -2,12 +2,18 @@ import styles from './Footer.module.scss';
 import { Icon, IconKind } from '@components/Icon/Icon';
 import {useLocation, useParams} from "react-router-dom";
 import clsx from "clsx";
+import {FC} from "react";
 
 const buttons: { icon: IconKind; name: string, href: string }[] = [
     {
         icon: 'rocket',
         name: 'Play',
         href: '/home'
+    },
+    {
+        icon: 'crown',
+        name: 'Rank',
+        href: '/rank'
     },
     {
         icon: 'shoppingCart',
@@ -21,7 +27,12 @@ const buttons: { icon: IconKind; name: string, href: string }[] = [
     },
 ];
 
-export const Footer = () => {
+type FooterProps = {
+    isBlue?: boolean;
+}
+
+export const Footer:FC<FooterProps> = (props) => {
+    const {isBlue} = props
     const location = useLocation();
     return (
         <div className={styles.root}>
