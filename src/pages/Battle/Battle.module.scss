@@ -84,6 +84,18 @@
 .animation {
     animation: reactionAnimation 1s forwards;
 }
+.boostButtonContainer {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.boostButton {
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 8px;
+}
 
 @keyframes reactionAnimation {
     0% {

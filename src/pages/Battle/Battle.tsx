@@ -24,7 +24,7 @@ const BattlePage = () => {
         return <div>Battle not found</div>;
     }
 
-    const [time, setTime] = useState(15);
+    const [time, setTime] = useState(1500);
 
     const increaseUserBalance = useUnit(increaseBalance)
 
@@ -84,7 +84,7 @@ const BattlePage = () => {
                 <span className={styles.timer}>Time left: {formatTime(time)}</span>
                 <span className={styles.coins}>{clicksCount}</span>
             </div>
-
+            <div className={styles.boostButtonContainer}><button className={styles.boostButton}>Boost</button></div>
             <Coin video={curSide?.videoUrl ?? 'woody.mp4'} onClick={handleClick} />
             <div className={styles.reactionsContainer}>
                 {reactions.map((reaction) => (
