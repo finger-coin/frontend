@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Win.module.scss';
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 const WinPage = () => {
     const location = useLocation();
@@ -11,6 +11,9 @@ const WinPage = () => {
             <h1>YOU WON!</h1>
             <h2>+{clicksCount}</h2>
             <img src="/win.png"/>
+            <Link className={styles.okButtonContainer} to="/">
+                <button className={styles.okButton}>OK</button>
+            </Link>
         </div>
     );
 };

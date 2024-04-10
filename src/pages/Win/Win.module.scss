@@ -11,3 +11,17 @@
         color: #efc04f;
     }
 }
+.okButtonContainer {
+    display: flex;
+    padding-top: 48px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.okButton {
+    border: 1px solid white;
+    padding: 12px 100px;
+    border-radius: 8px;
+    color: white;
+}
