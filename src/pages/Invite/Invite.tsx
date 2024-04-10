@@ -5,10 +5,13 @@ import {useAccount, useWriteContract} from "wagmi";
 import {abi} from "../../abi";
 import 'react-toastify/dist/ReactToastify.css';
 import {toast, ToastContainer} from "react-toastify";
+import {$balance, decreaseBalance} from "@store/balance";
+import {useUnit} from "effector-react";
 
 const InvitePage = () => {
     const { data: hash, writeContractAsync } = useWriteContract()
     const {address} = useAccount();
+    const [balance, decreaseUserBalance] = useUnit([$balance, decreaseBalance])
 
     const handleWriteContract = async () => {
         await writeContractAsync({
@@ -17,19 +20,18 @@ const InvitePage = () => {
             functionName: 'mint',
             args: [
                 address,
-                BigInt(10000*(10**18))
+                BigInt(balance*(10**18))
             ],
         }).then((value) => {
             toast(`Success! Hash: ${value}`)
-                setCoins('0')
+                decreaseUserBalance(balance)
         }
         ).catch((e) => toast(`Error! ${e.toString()}`))
     }
-    const [coins, setCoins] = useState('10,000')
     return (
         <div className={styles.root}>
             <ToastContainer />
-            <span>Finger Coins: {coins}</span>
+            <span>Finger Coins: {balance}</span>
             <button onClick={handleWriteContract} className={styles.mintButton}>Mint</button>
             <img src="/gift.png" alt='Gift'/>
             <span className={styles.inviteText}>
@@ -37,7 +39,7 @@ const InvitePage = () => {
             </span>
             <button className={styles.copyLinkButton}>Copy Link</button>
             <div className={styles.socials}>
-                <Icon name="twitter" key='twitter' className={styles.socialIcon}/>
+                <a href={"https://x.com/fingercoin2024"}><Icon name="twitter" key='twitter' className={styles.socialIcon}/></a>
                 {/*<Icon name="facebook"  key='facebook' className={styles.socialIcon}/>*/}
             </div>
 

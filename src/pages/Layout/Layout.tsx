@@ -5,18 +5,19 @@ import styles from './Layout.module.scss';
 import {useLocation, useParams} from "react-router-dom";
 import clsx from "clsx";
 
-
 const Layout: FC = ({ children }) => {
     const location = useLocation();
+    const params = useParams();
 
-    console.log(location.pathname)
+    const isGame = location.pathname.includes('/battle/') && location.pathname.includes('/click');
+
     return (
-        <div className={clsx(styles.root, location.pathname === '/battle/0/click' && styles.isPurple)}>
-            <Header isGame={location.pathname === '/battle/0/click'} />
-            <div className={clsx(styles.main, location.pathname === '/battle/0/click' && styles.isPurple)}>
-            {children}
+        <div className={clsx(styles.root, isGame && styles.isPurple)}>
+            <Header isGame={isGame} />
+            <div className={clsx(styles.main, isGame && styles.isPurple)}>
+                {children}
             </div>
-            <Footer isGame={location.pathname === '/battle/0/click'}/>
+            <Footer isGame={isGame} />
         </div>
     );
 };

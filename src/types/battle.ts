@@ -1,6 +1,7 @@
 export type Character = {
     name: string;
     imageUrl: string;
+    videoUrl: string;
 }
 
 export type Battle = {

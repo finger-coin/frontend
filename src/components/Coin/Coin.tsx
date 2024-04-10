@@ -4,13 +4,14 @@ import { animated, useSpring } from '@react-spring/web';
 
 import styles from './Coin.module.scss';
 
-const danceMan = '/danceman.mp4';
+const danceMan = '/woody.mp4';
 
 type CoinProps = {
     onClick?: () => void;
+    video: string;
 };
 
-export const Coin: FC<CoinProps> = ({ onClick }) => {
+export const Coin: FC<CoinProps> = ({ onClick, video }) => {
     const [clicked, setClicked] = useState(false);
 
     const handleClick = () => {

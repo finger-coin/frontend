@@ -5,7 +5,7 @@ import {battles} from "../../mock/battles";
 const HomePage = () => {
     return (
         <div className={styles.root}>
-            <span className={styles.title}>Choose your play</span>
+            <span className={styles.title}>Choose your battle</span>
            <BattleCardList battleCards={battles} />
         </div>
     );

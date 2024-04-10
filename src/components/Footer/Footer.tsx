@@ -22,7 +22,7 @@ const buttons: { icon: IconKind; name: string, href: string }[] = [
     },
     {
         icon: 'userCirclePlus',
-        name: 'Profile',
+        name: 'Me',
         href: '/profile'
     },
 ];

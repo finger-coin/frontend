@@ -4,6 +4,9 @@ import { Progress } from '@components/Progress/Progress';
 import { useNavigate, useParams } from 'react-router-dom';
 import { battles } from '../../mock/battles';
 import { Coin } from '@components/Coin/Coin';
+import {currentSide} from "@store/battle";
+import {useUnit} from "effector-react";
+import {increaseBalance} from "@store/balance";
 
 const BattlePage = () => {
     const { battleId } = useParams<{ battleId: string }>();
@@ -15,21 +18,23 @@ const BattlePage = () => {
 
     if (battleId === undefined) return null;
 
-    const selectedBattle = battles.find(battle => battle.id === parseInt(battleId, 10));
+    const selectedBattle = battles.find((battle) => battle.id === parseInt(battleId, 10));
 
     if (!selectedBattle) {
         return <div>Battle not found</div>;
     }
 
-    const [time, setTime] = useState(15); // Установка времени 15 секунд
+    const [time, setTime] = useState(15);
+
+    const increaseUserBalance = useUnit(increaseBalance)
 
     const navigate = useNavigate();
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setTime(prevTime => prevTime - 1);
-            setProgress(prevProgress => prevProgress - 1);
-        }, 1000); // Установка интервала на 1000 миллисекунд (1 секунда)
+            setTime((prevTime) => prevTime - 1);
+            setProgress((prevProgress) => prevProgress - 1);
+        }, 1000);
 
         return () => {
             clearInterval(timer);
@@ -38,9 +43,12 @@ const BattlePage = () => {
 
     useEffect(() => {
         if (time === 0) {
-            navigate(`/battle/${battleId}/win`);
+            navigate(`/battle/${battleId}/win`, { state: { clicksCount }});
+            increaseUserBalance(clicksCount)
+
         }
     }, [time, navigate, battleId]);
+
 
     const formatTime = (time: number) => {
         const minutes = Math.floor(time / 60);
@@ -49,22 +57,25 @@ const BattlePage = () => {
     };
 
     const handleClick = () => {
-        setClicksCount(prevClicks => prevClicks + 1);
-        setProgress(prevProgress => prevProgress + 1);
+        setClicksCount((prevClicks) => prevClicks + 1);
+        setProgress((prevProgress) => prevProgress + 1);
         setShowText(true);
 
-        setReactions(prevReactions => [
+        setReactions((prevReactions) => [
             ...prevReactions,
             {
                 id: Date.now(),
-                animation: true
-            }
+                animation: true,
+                top: Math.random() * 100,
+                left: 10 - Math.random() * 100,
+            },
         ]);
 
         setTimeout(() => {
             setShowText(false);
         }, 300);
     };
+    const curSide = useUnit(currentSide)
 
     return (
         <div className={styles.root}>
@@ -74,20 +85,23 @@ const BattlePage = () => {
                 <span className={styles.coins}>{clicksCount}</span>
             </div>
 
-            <Coin onClick={handleClick}/>
+            <Coin video={curSide?.videoUrl ?? 'woody.mp4'} onClick={handleClick} />
             <div className={styles.reactionsContainer}>
-                {reactions.map(reaction => (
+                {reactions.map((reaction) => (
                     <img
                         key={reaction.id}
                         className={`${styles.reaction} ${reaction.animation ? styles.animation : ''}`}
+                        style={{
+                            top: `${reaction.top}%`,
+                            left: `calc(50% + ${reaction.left}px)`,
+                        }}
                         src="/like.png"
                         onAnimationEnd={() => {
-                            setReactions(prevReactions =>
-                                prevReactions.filter(item => item.id !== reaction.id)
-                            );
+                            setReactions((prevReactions) => prevReactions.filter((item) => item.id !== reaction.id));
                         }}
                     />
                 ))}
+
             </div>
         </div>
     );
