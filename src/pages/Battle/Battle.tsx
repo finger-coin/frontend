@@ -24,7 +24,7 @@ const BattlePage = () => {
         return <div>Battle not found</div>;
     }
 
-    const [time, setTime] = useState(1500);
+    const [time, setTime] = useState(15);
 
     const increaseUserBalance = useUnit(increaseBalance)
 
