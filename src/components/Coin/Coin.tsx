@@ -27,10 +27,6 @@ export const Coin: FC<CoinProps> = ({ onClick, video }) => {
 
     return (
         <animated.div className={styles.root}  onClick={handleClick}>
-            {/*<video autoPlay loop className={styles.videoContainer}>*/}
-            {/*    <source src="/danceman.mp4" type="video/mp4"/>*/}
-            {/*    Your browser does not support the video tag.*/}
-            {/*</video>*/}
             <animated.video src={danceMan} autoPlay loop  className={styles.coinIcon} style={animatedProps}/>
         </animated.div>
     );

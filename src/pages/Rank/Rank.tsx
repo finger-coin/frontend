@@ -12,7 +12,7 @@ const RankPage = () => {
                 <img className={styles.img} src="/avatar.png" />
                 <span className={styles.number}>No. 6</span>
             </div>
-            <ScrollArea.Root className={styles.root}>
+            <ScrollArea.Root className={styles.scrollAreaRoot}>
                 <ScrollArea.Viewport className={styles.viewPort}>
                     {ranks.map((rank, index) => (
                         <div key={rank.url} className={styles.rankCard}>
